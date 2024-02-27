@@ -79,11 +79,11 @@ export default function UserProfile() {
             </button>
 
             <div className="flex flex-col gap-5 md:items-end">
-              <div className="text-end">
+              <div>
                 <h4 className="text-black font-semibold">Languages</h4>
                 <p>{languages.map((language) => language).join(" ,")}</p>
               </div>
-              <div className="text-end">
+              <div>
                 <h4 className="text-black font-semibold">{contentType}</h4>
                 <div className="flex items-center gap-2.5">
                   <img src={Smile} alt="smile icon" />
