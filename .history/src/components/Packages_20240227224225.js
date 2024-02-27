@@ -10,6 +10,7 @@ export default function Packages() {
 
   // Function to change the active tab
   const handleTabClick = (tabName) => {
+    console.log(`Tab clicked: ${tabName}`);
     setActiveTab(tabName.toLowerCase());
   };
 
@@ -40,7 +41,7 @@ export default function Packages() {
             </div>
             <div
               onClick={() => handleTabClick("Affiliate")}
-              className={`tab tab-Affiliates ${activeTab === "affiliate" ? "active" : ""}`}
+              className={`tab tab-Affiliates ${activeTab === "affiliate" ? "tab-Affiliates.active" : ""}`}
             >
               Affiliates
             </div>

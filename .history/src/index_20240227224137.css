@@ -1,0 +1,21 @@
+.tab {
+  width: 100%;
+  padding: 22px;
+  text-align: center;
+  cursor: pointer;
+  background-color: white;
+  color: #111111;
+}
+
+.tab-UGC.active, .tab-Affiliates.active {
+  background-color: #0014BC !important;
+  color: white !important;
+}
+
+.tab-UGC {
+  border-radius: 10px 0 0 10px;
+}
+
+.tab-Affiliates {
+  border-radius: 0 10px 10px 0;
+}

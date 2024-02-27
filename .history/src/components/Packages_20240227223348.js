@@ -10,12 +10,13 @@ export default function Packages() {
 
   // Function to change the active tab
   const handleTabClick = (tabName) => {
+    console.log(`Tab clicked: ${tabName}`);
     setActiveTab(tabName.toLowerCase());
   };
 
   // Sub tab click handler for Videos and Photos
   const handleSubTabClick = (tabName) => {
-    setActiveSubTab(tabName.toLowerCase());
+    setActiveSubTab(tabName.toLowerCase()); // Changed to lowercase for consistency
   };
 
   // Filter packages based on the activeTab and activeSubTab
@@ -23,7 +24,8 @@ export default function Packages() {
     // Ensure package type matches active tab (e.g., UGC, affiliate) in lowercase
     const typeMatch = pkg.packageType.toLowerCase() === activeTab;
     // Ensure package content type matches active sub-tab (e.g., Video, Photo), case-insensitive comparison
-    const contentMatch = pkg.contentType.toLowerCase() === activeSubTab;
+    const contentMatch =
+      pkg.contentType.toLowerCase() === activeSubTab.toLowerCase();
     return typeMatch && contentMatch; // Only include packages that match both conditions
   });
 
@@ -32,15 +34,15 @@ export default function Packages() {
       <section className="w-full flex flex-col gap-[50px]">
         <section className="w-full flex flex-col gap-[30px]">
           <div className="w-full flex items-center rounded-[10px]">
-          <div
+            <div
               onClick={() => handleTabClick("UGC")}
-              className={`tab tab-UGC ${activeTab === "ugc" ? "active" : ""}`}
+              className={`tab ${activeTab === "ugc" ? "active" : ""}`}
             >
               UGC
             </div>
             <div
-              onClick={() => handleTabClick("Affiliate")}
-              className={`tab tab-Affiliates ${activeTab === "affiliate" ? "active" : ""}`}
+              onClick={() => handleTabClick("Affiliates")}
+              className={`tab ${activeTab === "affiliate" ? "active" : ""}`}
             >
               Affiliates
             </div>
@@ -49,17 +51,17 @@ export default function Packages() {
           <div className="w-full flex flex-col gap-9">
             <div className="flex items-center gap-[38px]">
               <p
-                onClick={() => handleSubTabClick("video")} 
+                onClick={() => handleSubTabClick("Video")}
                 className={`cursor-pointer ${
-                  activeSubTab === "video" ? "text-black" : "text-[#0000004D]"
+                  activeSubTab === "Video" ? "text-black" : "text-[#0000004D]"
                 }`}
               >
                 Videos
               </p>
               <p
-                onClick={() => handleSubTabClick("photo")} 
+                onClick={() => handleSubTabClick("Photo")}
                 className={`cursor-pointer ${
-                  activeSubTab === "photo" ? "text-black" : "text-[#0000004D]"
+                  activeSubTab === "Photo" ? "text-black" : "text-[#0000004D]"
                 }`}
               >
                 Photos
@@ -67,28 +69,25 @@ export default function Packages() {
             </div>
 
             {filteredPackages.length > 0 ? (
-              filteredPackages.map((pkg, index) => (
-                <div key={index} className="w-full flex flex-col gap-4">
-                  <div className="w-full flex items-center justify-between text-xl">
-                    <h3 className="font-semibold text-black">{pkg.title}</h3>
-                    <p>USD {pkg.price.toFixed(2)}</p>
-                  </div>
-                  <div className="flex flex-col gap-2.5">
-                    {pkg.services.map((service, serviceIndex) => (
-                      <div
-                        key={serviceIndex}
-                        className="flex items-center gap-1 text-sm"
-                      >
-                        <img src={Check} alt="check icon" />
-                        <p>{service}</p>
-                      </div>
-                    ))}
-                  </div>
+        filteredPackages.map((pkg, index) => (
+          <div key={index} className="w-full flex flex-col gap-4">
+            <div className="w-full flex items-center justify-between text-xl">
+              <h3 className="font-semibold text-black">{pkg.title}</h3>
+              <p>USD {pkg.price.toFixed(2)}</p>
+            </div>
+            <div className="flex flex-col gap-2.5">
+              {pkg.services.map((service, serviceIndex) => (
+                <div key={serviceIndex} className="flex items-center gap-1 text-sm">
+                  <img src={Check} alt="check icon" />
+                  <p>{service}</p>
                 </div>
-              ))
-            ) : (
-              <p>No packages available for this selection.</p>
-            )}
+              ))}
+            </div>
+          </div>
+        ))
+      ) : (
+        <p>No packages available for this selection.</p>
+      )}
           </div>
         </section>
 

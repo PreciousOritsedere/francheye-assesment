@@ -12,6 +12,7 @@ export default function PreviousWorks() {
     // Function to fetch photos
     const fetchPhotos = async () => {
       try {
+        console.log("Fetching photos...");
         const response = await axios.get(
           "https://jsonplaceholder.typicode.com/photos"
         );

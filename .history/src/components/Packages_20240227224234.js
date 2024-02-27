@@ -10,6 +10,7 @@ export default function Packages() {
 
   // Function to change the active tab
   const handleTabClick = (tabName) => {
+    console.log(`Tab clicked: ${tabName}`);
     setActiveTab(tabName.toLowerCase());
   };
 

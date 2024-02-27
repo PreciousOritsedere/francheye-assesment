@@ -10,6 +10,7 @@ export default function Packages() {
 
   // Function to change the active tab
   const handleTabClick = (tabName) => {
+    console.log(`Tab clicked: ${tabName}`);
     setActiveTab(tabName.toLowerCase());
   };
 
@@ -32,15 +33,15 @@ export default function Packages() {
       <section className="w-full flex flex-col gap-[50px]">
         <section className="w-full flex flex-col gap-[30px]">
           <div className="w-full flex items-center rounded-[10px]">
-          <div
+            <div
               onClick={() => handleTabClick("UGC")}
-              className={`tab tab-UGC ${activeTab === "ugc" ? "active" : ""}`}
+              className={`tab ${activeTab === "ugc" ? "active" : ""}`}
             >
               UGC
             </div>
             <div
-              onClick={() => handleTabClick("Affiliate")}
-              className={`tab tab-Affiliates ${activeTab === "affiliate" ? "active" : ""}`}
+              onClick={() => handleTabClick("Affiliates")}
+              className={`tab ${activeTab === "affiliate" ? "active" : ""}`}
             >
               Affiliates
             </div>
@@ -49,17 +50,17 @@ export default function Packages() {
           <div className="w-full flex flex-col gap-9">
             <div className="flex items-center gap-[38px]">
               <p
-                onClick={() => handleSubTabClick("video")} 
+                onClick={() => handleSubTabClick("Video")}
                 className={`cursor-pointer ${
-                  activeSubTab === "video" ? "text-black" : "text-[#0000004D]"
+                  activeSubTab === "Video" ? "text-black" : "text-[#0000004D]"
                 }`}
               >
                 Videos
               </p>
               <p
-                onClick={() => handleSubTabClick("photo")} 
+                onClick={() => handleSubTabClick("Photo")}
                 className={`cursor-pointer ${
-                  activeSubTab === "photo" ? "text-black" : "text-[#0000004D]"
+                  activeSubTab === "Photo" ? "text-black" : "text-[#0000004D]"
                 }`}
               >
                 Photos
