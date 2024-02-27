@@ -90,11 +90,11 @@ export default function UserProfile() {
                   <p>Face Creator</p>
                 </div>
               </div>
-              <div className="flex flex-col gap-4">
+              <div className="flex ">
                 <h4 className="text-black font-semibold">
                   Brands I’ve worked with
                 </h4>
-                <div className="flex items-center gap-4 md:self-end">
+                <div className="flex items-center gap-4">
                   <img src={Nike} alt="nike icon" />
                   <img src={Nike} alt="nike icon" />
                   <img src={Nike} alt="nike icon" />

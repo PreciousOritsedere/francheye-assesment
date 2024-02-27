@@ -3,7 +3,7 @@ import Photo from "../assets/nav-profile-photo.svg";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0  w-full flex items-center justify-between p-5 border-b border-[#F6F6F6] bg-[#f1f1f1] z-50 md:py-[26px] md:px-[99px]">
+    <nav className="fixed top-0 left-0  w-full flex items-center justify-between p-5 border-b border-[#F6F6F6] bg-[#f1f1f1] z-50 md:">
       <div className="w-[128px] h-[96px]">
         <img src={Logo} alt="hamburger menu" className="w-full h-full" />
       </div>

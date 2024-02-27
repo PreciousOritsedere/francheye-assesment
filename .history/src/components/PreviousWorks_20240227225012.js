@@ -25,7 +25,7 @@ export default function PreviousWorks() {
   }, []);
 
   return (
-    <main className="max-w-[776px] w-full flex flex-col gap-[38px] pt-10 px-10 text-xl text-black font-bold">
+    <main className="max-w-[776px] w-full flex flex-col gap-[38px] pt-1px-10 text-xl text-black font-bold">
       <h3>Previous Works</h3>
 
       <div className="w-full grid grid-cols-3 gap-[25px]">
