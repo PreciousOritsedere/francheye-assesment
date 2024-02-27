@@ -68,8 +68,8 @@ export default function UserProfile() {
             </div>
 
             <div className="flex flex-col  text-black">
-              <p className="  font-bold">My Bio</p>
-              <p className="text-[#000000B2]">{bio}</p>
+              <p className=" text-[#000000B2] font-bold">My Bio</p>
+              <p>{bio}</p>
             </div>
           </div>
 
